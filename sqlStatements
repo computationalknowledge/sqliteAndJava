@@ -1,0 +1,16 @@
+insert into classes (classid, classname, classtime, roomid) 
+values	(3, "Emerging Technologies", "WEDPM", "B101");
+insert into classes (classid, classname, classtime, roomid) 
+values	(4, "College English", "FRIAM", "B203");
+
+
+select * from enrollments; 
+
+insert into enrollments (studentid, classid)
+values (2,1);
+
+select students.studentid, students.studentname,
+classes.classname, classes.classtime, classes.roomid 
+from students, classes, enrollments 
+where students.studentid = enrollments.studentid 
+and    classes.classid = enrollments.classid;
