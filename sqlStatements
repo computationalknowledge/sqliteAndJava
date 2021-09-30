@@ -31,4 +31,4 @@ select students.studentid, students.studentname,
 classes.classname, classes.classtime, classes.roomid 
 from students, classes, enrollments 
 where students.studentid = enrollments.studentid 
-an    classes.classid = enrollments.classid
+and    classes.classid = enrollments.classid
