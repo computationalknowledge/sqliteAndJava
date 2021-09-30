@@ -1,16 +1,34 @@
-insert into classes (classid, classname, classtime, roomid) 
-values	(3, "Emerging Technologies", "WEDPM", "B101");
-insert into classes (classid, classname, classtime, roomid) 
-values	(4, "College English", "FRIAM", "B203");
+Lab activity:
+1. Make a simple Java Project in Eclipse
+2. get starter sqlite project from github
+3. run code and observe compile fail due to jdk javac not having access to the sqlite JDBC driver
+4. get sqlite jar file from moodle
+5. add that jar file to your Java Eclipse project
+6. goal = run starter code and observe correct operation because Java compiler can now access the sqlite JDBC driver files
+
+next steps:
+We can do SQL stuff from inside Java Program space
+
+1. Create databases
+2. put in data
+3. query the data: get the Result Set from a SQL STATEMENT: the jdbc driver will send back to us a RESULT SET: which will be a Java Collection Object
+we can parse over that object
+we can pluck off the ROWSETS returned from our SQL call to DB
+
+take RS from DATA PULL : wrap it up in html and push it back to the client browser via the HTTP server we are running our controller code
 
 
-select * from enrollments; 
+activity: write a sql statement to enroll Mary into Java
+
+do this NOW. 1 minute.
 
 insert into enrollments (studentid, classid)
-values (2,1);
+values (2,1)
+
+activity: generate student schedules:
 
 select students.studentid, students.studentname,
 classes.classname, classes.classtime, classes.roomid 
 from students, classes, enrollments 
 where students.studentid = enrollments.studentid 
-and    classes.classid = enrollments.classid;
+an    classes.classid = enrollments.classid
